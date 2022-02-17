@@ -1,4 +1,5 @@
 import React from "react";
+import star from "../images/star.svg";
 
 const Category = () => {
   return (
@@ -15,7 +16,10 @@ const Category = () => {
             alt="movie image"
           />
           <figcaption className="white">Movie title</figcaption>
-          <span className="ratings">8.9</span>
+          <div className="ratings">
+            <img src={star} alt="Star icon" />
+            <span>8.9</span>
+          </div>
         </figure>
         <figure className="card">
           <img
@@ -23,7 +27,10 @@ const Category = () => {
             alt="movie image"
           />
           <figcaption className="white">Movie title</figcaption>
-          <span className="ratings">8.9</span>
+          <div className="ratings">
+            <img src={star} alt="Star icon" />
+            <span>8.9</span>
+          </div>
         </figure>
       </div>
     </div>

@@ -246,6 +246,18 @@ header h1 {
   border-radius: 20px;
   object-fit: cover;
 }
+.ratings {
+  display: flex;
+  font-size: 15px;
+  color: #e6ab1b;
+  align-items: center;
+  line-height: 22px;
+  gap: 5px;
+}
+.ratings img {
+  height: 15.85px;
+  width: 16.67px;
+}
 
 /* continue watching cards */
 .continue-watching-cards {
