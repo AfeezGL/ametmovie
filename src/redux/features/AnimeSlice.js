@@ -7,29 +7,30 @@ const initialState = {
   status: "idle",
 };
 
-const getCategoryAnimes = async (category) => {
-  const categoryCollectionRef = collection(db, "anime", "categories", category);
-  const getAnimes = await getDocs(categoryCollectionRef);
-  const data = getAnimes.docs.map((doc) => ({
-    ...doc.data(),
-  }));
-
-  return {
-    category,
-    data,
-  };
-};
-
 const getAnimes = createAsyncThunk("anime/getAnimes", async () => {
   const animeCollectinRef = collection(db, "anime");
   const categoriesRef = doc(animeCollectinRef, "categories");
   const getCategories = await getDoc(categoriesRef);
   const categories = getCategories.data();
 
-  const allCategories = categories.names.map((name) => getCategoryAnimes(name));
-  console.log(allCategories);
+  const allCategories = categories.names.map(async (category) => {
+    const categoryCollectionRef = collection(
+      db,
+      "anime",
+      "categories",
+      category
+    );
+    const getAnimes = await getDocs(categoryCollectionRef);
+    const data = getAnimes.docs.map((doc) => ({
+      name: category,
+      data: doc.data(),
+    }));
 
-  return allCategories;
+    return data;
+  });
+
+  const objects = await Promise.all(allCategories);
+  return objects;
 });
 
 const animeSlice = createSlice({
