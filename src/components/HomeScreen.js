@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Category from "./Category";
 import ContinueWatching from "./ContinueWatching";
 import plus from "../images/plus.svg";
+import { useDispatch } from "react-redux";
+import { getAnimes } from "../redux/features/AnimeSlice";
+import { useSelector } from "react-redux";
 const HomeScreen = () => {
+  const dispatch = useDispatch();
+  const animes = useSelector((state) => state.anime);
+  useEffect(() => {
+    dispatch(getAnimes());
+  }, []);
+
   return (
     <div className="main">
       <nav>
@@ -14,7 +23,7 @@ const HomeScreen = () => {
       </nav>
       <header>
         <button className="left-arrow">
-          <i class="fa-solid fa-chevron-left"></i>
+          <i className="fa-solid fa-chevron-left"></i>
         </button>
         <div
           className="header-card"
@@ -58,7 +67,7 @@ const HomeScreen = () => {
           </div>
         </div>
         <button className="right-arrow">
-          <i class="fa-solid fa-chevron-right"></i>
+          <i className="fa-solid fa-chevron-right"></i>
         </button>
       </header>
       <Category />
