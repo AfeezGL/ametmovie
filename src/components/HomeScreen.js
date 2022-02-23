@@ -7,9 +7,9 @@ import { getAnimes } from "../redux/features/AnimeSlice";
 import { useSelector } from "react-redux";
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const animes = useSelector((state) => state.anime);
+  const animes = useSelector((state) => state.anime.animes);
   useEffect(() => {
-    dispatch(getAnimes());
+    if (!animes) dispatch(getAnimes());
   }, []);
 
   return (
@@ -70,8 +70,11 @@ const HomeScreen = () => {
           <i className="fa-solid fa-chevron-right"></i>
         </button>
       </header>
-      <Category />
       <ContinueWatching />
+      {animes &&
+        animes.map((category) => (
+          <Category category={category} key={category.name} />
+        ))}
     </div>
   );
 };

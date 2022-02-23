@@ -21,12 +21,15 @@ const getAnimes = createAsyncThunk("anime/getAnimes", async () => {
       category
     );
     const getAnimes = await getDocs(categoryCollectionRef);
-    const data = getAnimes.docs.map((doc) => ({
-      name: category,
+    const animes = getAnimes.docs.map((doc) => ({
       data: doc.data(),
+      id: doc.id,
     }));
 
-    return data;
+    return {
+      name: category,
+      animes,
+    };
   });
 
   const objects = await Promise.all(allCategories);
