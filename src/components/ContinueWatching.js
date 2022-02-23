@@ -1,26 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const ContinueWatching = () => {
+  const movies = useSelector((state) => state.continueWatching.movies);
   return (
     <div className="continue-watching">
       <p className="white">Continue Watching</p>
       <div className="continue-watching-cards">
-        <figure>
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/ametmovie.appspot.com/o/bfee47988f21484dbbd3efbaf3127a73.jpeg?alt=media&token=c13a2ae1-b027-42f4-8eef-996e255a389a"
-            alt="movie screenshot"
-          />
-          <progress value={32} max={100} />
-          <figcaption className="white">Naruto</figcaption>
-        </figure>
-        <figure>
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/ametmovie.appspot.com/o/bfee47988f21484dbbd3efbaf3127a73.jpeg?alt=media&token=c13a2ae1-b027-42f4-8eef-996e255a389a"
-            alt="movie screenshot"
-          />
-          <progress value={32} max={100} />
-          <figcaption className="white">Attack on titan</figcaption>
-        </figure>
+        {movies &&
+          movies.map((movie) => (
+            <figure key={movie.id}>
+              <img src={movie.data.imgUrl} alt="movie screenshot" />
+              <progress value={movie.data.progress} max={100} />
+              <figcaption className="white">{movie.data.title}</figcaption>
+            </figure>
+          ))}
       </div>
     </div>
   );
