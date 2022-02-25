@@ -216,6 +216,14 @@ header h1 {
   height: 24px;
 }
 
+/* CONTINUE WATCHING */
+.continue-watching {
+  padding-bottom: 50px;
+}
+.continue-watching > p {
+  padding-bottom: 30px;
+}
+
 /* category cards */
 .category {
   margin-bottom: 40px;
@@ -223,7 +231,6 @@ header h1 {
 .category-header {
   display: flex;
   justify-content: space-between;
-
   padding-bottom: 30px;
 }
 .category-header p {

@@ -5,6 +5,7 @@ import Friends from "./components/Friends";
 import HomeScreen from "./components/HomeScreen";
 import Nav from "./components/Nav";
 import { fetchContinueWatching } from "./redux/features/continueWatchingSlice";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,11 +18,13 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Nav />
-      <HomeScreen />
-      <Friends />
-    </div>
+    <Router>
+      <div className="App">
+        <Nav />
+        <HomeScreen />
+        <Friends />
+      </div>
+    </Router>
   );
 }
 
