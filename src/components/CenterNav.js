@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
+import CustomLink from "./CustomLink";
 
 const CenterNav = () => {
   return (
-    <nav>
+    <nav role={"navigation"} aria-roledescription="secondary">
       <ul>
         <li>
-          <Link to={"/series"}>TV Series</Link>
+          <CustomLink to={"/series"}>TV Series</CustomLink>
         </li>
         <li>
-          <Link to={"/movies"}>Movies</Link>
+          <CustomLink to={"/movies"}>Movies</CustomLink>
         </li>
         <li className="active">
-          <Link to={"/animes"}>Animes</Link>
+          <CustomLink to={"/animes"}>Animes</CustomLink>
         </li>
       </ul>
     </nav>

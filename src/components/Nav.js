@@ -11,7 +11,7 @@ import login from "../images/log-in.svg";
 
 const Nav = () => {
   return (
-    <div className="nav">
+    <nav className="nav" role={"navigation"} aria-roledescription="primary">
       <div className="brand">
         <img src={logo} alt="Amet Logo" />
       </div>
@@ -62,7 +62,7 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
