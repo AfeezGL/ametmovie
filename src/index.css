@@ -54,9 +54,13 @@ body {
 }
 .nav ul li {
   width: 100%;
-  padding-left: 50px;
 }
-.nav ul li > * {
+.nav ul li a {
+  padding-left: 50px;
+  text-decoration: none;
+  color: #9696a3;
+}
+.nav ul li a > * {
   display: inline;
   vertical-align: middle;
   font-size: 15px;

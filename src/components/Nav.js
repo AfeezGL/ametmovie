@@ -8,6 +8,7 @@ import user from "../images/user.svg";
 import users from "../images/users.svg";
 import settings from "../images/settings.svg";
 import login from "../images/log-in.svg";
+import CustomPrimaryNavLink from "./CustomPrimaryNavLink";
 
 const Nav = () => {
   return (
@@ -18,21 +19,29 @@ const Nav = () => {
       <div className="menu">
         <p>MENU</p>
         <ul>
-          <li className="current-page">
-            <img src={home} alt="home icon" />
-            <p>Home</p>
+          <li>
+            <CustomPrimaryNavLink to={"/animes"}>
+              <img src={home} alt="home icon" />
+              <p>Home</p>
+            </CustomPrimaryNavLink>
           </li>
           <li>
-            <img src={heart} alt="heart icon" />
-            <p>Watchlist</p>
+            <CustomPrimaryNavLink to={"/watchlist"}>
+              <img src={heart} alt="heart icon" />
+              <p>Watchlist</p>
+            </CustomPrimaryNavLink>
           </li>
           <li>
-            <img src={compass} alt="Compass icon" />
-            <p>Discovery</p>
+            <CustomPrimaryNavLink to={"/discover"}>
+              <img src={compass} alt="Compass icon" />
+              <p>Discovery</p>
+            </CustomPrimaryNavLink>
           </li>
           <li>
-            <img src={clock} alt="Clock icon" />
-            <p>Coming soon</p>
+            <CustomPrimaryNavLink to={"/upcoming"}>
+              <img src={clock} alt="Clock icon" />
+              <p>Coming soon</p>
+            </CustomPrimaryNavLink>
           </li>
         </ul>
       </div>
