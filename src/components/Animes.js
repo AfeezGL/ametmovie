@@ -14,7 +14,7 @@ const Animes = () => {
   }, []);
   return (
     <>
-      <CenterNav />
+      <SecondaryNav />
       <Header />
       <ContinueWatching />
       {animes &&

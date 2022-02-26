@@ -10,7 +10,7 @@ import settings from "../images/settings.svg";
 import login from "../images/log-in.svg";
 import CustomPrimaryNavLink from "./CustomPrimaryNavLink";
 
-const Nav = () => {
+const PrimaryNav = () => {
   return (
     <nav className="nav" role={"navigation"} aria-roledescription="primary">
       <div className="brand">
@@ -75,4 +75,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default PrimaryNav;
