@@ -1,17 +1,19 @@
-import CustomLink from "./CustomLink";
+import CustomSecondaryNavLink from "./CustomSecondaryNavLink.js";
 
 const CenterNav = () => {
   return (
     <nav role={"navigation"} aria-roledescription="secondary">
       <ul>
         <li>
-          <CustomLink to={"/series"}>TV Series</CustomLink>
+          <CustomSecondaryNavLink to={"/series"}>
+            TV Series
+          </CustomSecondaryNavLink>
         </li>
         <li>
-          <CustomLink to={"/movies"}>Movies</CustomLink>
+          <CustomSecondaryNavLink to={"/movies"}>Movies</CustomSecondaryNavLink>
         </li>
         <li className="active">
-          <CustomLink to={"/animes"}>Animes</CustomLink>
+          <CustomSecondaryNavLink to={"/animes"}>Animes</CustomSecondaryNavLink>
         </li>
       </ul>
     </nav>

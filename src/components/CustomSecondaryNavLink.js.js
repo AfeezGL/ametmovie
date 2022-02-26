@@ -1,6 +1,6 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
-const CustomLink = ({ children, to, ...props }) => {
+const CustomSecondaryNavLink = ({ children, to, ...props }) => {
   let resolved = useResolvedPath(to);
   let match = useMatch({ path: resolved.pathname, end: true });
 
@@ -17,4 +17,4 @@ const CustomLink = ({ children, to, ...props }) => {
   );
 };
 
-export default CustomLink;
+export default CustomSecondaryNavLink;
