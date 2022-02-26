@@ -1,9 +1,9 @@
-import CenterNav from "./CenterNav";
+import SecondaryNav from "./SecondaryNav";
 
 const Movies = () => {
   return (
     <>
-      <CenterNav />
+      <SecondaryNav />
     </>
   );
 };

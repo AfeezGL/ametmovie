@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Category from "./Category";
-import CenterNav from "./CenterNav";
+import SecondaryNav from "./SecondaryNav";
 import ContinueWatching from "./ContinueWatching";
 import Header from "./Header";
 import { getAnimes } from "../redux/features/AnimeSlice";
