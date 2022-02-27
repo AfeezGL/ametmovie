@@ -49,12 +49,16 @@ const PrimaryNav = () => {
         <p>SOCIAL</p>
         <ul>
           <li>
-            <img src={user} alt="User icon" />
-            <p>Friends</p>
+            <CustomPrimaryNavLink to={"/friends"}>
+              <img src={user} alt="User icon" />
+              <p>Friends</p>
+            </CustomPrimaryNavLink>
           </li>
           <li>
-            <img src={users} alt="Users icon" />
-            <p>Parties</p>
+            <CustomPrimaryNavLink to={"/parties"}>
+              <img src={users} alt="Users icon" />
+              <p>Parties</p>
+            </CustomPrimaryNavLink>
           </li>
         </ul>
       </div>
@@ -62,12 +66,16 @@ const PrimaryNav = () => {
         <p>GENERAL</p>
         <ul>
           <li>
-            <img src={settings} alt="Settings icon" />
-            <p>Settings</p>
+            <CustomPrimaryNavLink to={"/settings"}>
+              <img src={settings} alt="Settings icon" />
+              <p>Settings</p>
+            </CustomPrimaryNavLink>
           </li>
           <li>
-            <img src={login} alt="Login icon" />
-            <p>Logout</p>
+            <CustomPrimaryNavLink to={"/logout"}>
+              <img src={login} alt="Login icon" />
+              <p>Logout</p>
+            </CustomPrimaryNavLink>
           </li>
         </ul>
       </div>
