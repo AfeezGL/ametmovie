@@ -1,7 +1,8 @@
+import demovideo from "../images/demovideo.mkv";
 const WatchScreen = () => {
   return (
     <div>
-      <video src=""></video>
+      <video controls src={demovideo}></video>
     </div>
   );
 };
