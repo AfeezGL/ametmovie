@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import star from "../images/star.svg";
 
 const Category = ({ category }) => {
@@ -11,14 +12,16 @@ const Category = ({ category }) => {
 
       <div className="cards">
         {category.animes.map((anime) => (
-          <figure className="card" key={anime.id}>
-            <img src={anime.data.imgUrl} alt="movie screenshot" />
-            <figcaption className="white">{anime.data.title}</figcaption>
-            <div className="ratings">
-              <img src={star} alt="Star icon" />
-              <span>{anime.data.rating}</span>
-            </div>
-          </figure>
+          <Link to={"/watch"} key={anime.id}>
+            <figure className="card">
+              <img src={anime.data.imgUrl} alt="movie screenshot" />
+              <figcaption className="white">{anime.data.title}</figcaption>
+              <div className="ratings">
+                <img src={star} alt="Star icon" />
+                <span>{anime.data.rating}</span>
+              </div>
+            </figure>
+          </Link>
         ))}
       </div>
     </div>
