@@ -12,7 +12,7 @@ const Category = ({ category }) => {
 
       <div className="cards">
         {category.animes.map((anime) => (
-          <Link to={"/watch"} key={anime.id}>
+          <Link to={`/watch/${anime.id}`} key={anime.id}>
             <figure className="card">
               <img src={anime.data.imgUrl} alt="movie screenshot" />
               <figcaption className="white">{anime.data.title}</figcaption>
