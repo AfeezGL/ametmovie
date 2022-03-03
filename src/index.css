@@ -255,6 +255,14 @@ header h1 {
 .cards::-webkit-scrollbar {
   display: none;
 }
+.card {
+  border-radius: 20px;
+  padding-bottom: 10px;
+  transition: all ease-in-out 0.3s;
+}
+.card:hover {
+  background-color: #000;
+}
 .card img {
   width: 174px;
   height: 217px;

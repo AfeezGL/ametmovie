@@ -1,11 +1,15 @@
-import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import demovideo from "../images/demovideo.mkv";
 const WatchScreen = () => {
-  const { movieId } = useParams();
+  const title = useSelector((state) => state.currentlyPlaying.title);
+  const details = useSelector((state) => state.currentlyPlaying.details);
   return (
     <div>
-      <video controls src={demovideo}></video>
-      <h1>{movieId}</h1>
+      <video autoPlay controls src={demovideo}></video>
+      <h1>{title}</h1>
+      <br />
+      <h2>Details</h2>
+      <p>{details}</p>
     </div>
   );
 };
