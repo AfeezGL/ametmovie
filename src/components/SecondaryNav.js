@@ -2,7 +2,11 @@ import CustomSecondaryNavLink from "./CustomSecondaryNavLink.js";
 
 const CenterNav = () => {
   return (
-    <nav role={"navigation"} aria-roledescription="secondary">
+    <nav
+      role={"navigation"}
+      aria-roledescription="secondary"
+      aria-label="Secondary"
+    >
       <ul>
         <li>
           <CustomSecondaryNavLink to={"/series"}>

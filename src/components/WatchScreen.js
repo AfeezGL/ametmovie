@@ -8,8 +8,10 @@ const WatchScreen = () => {
       <video autoPlay controls src={demovideo}></video>
       <h1>{title}</h1>
       <br />
-      <h2>Details</h2>
-      <p>{details}</p>
+      <section aria-labelledby="section-title">
+        <h2 id="section-title">Details</h2>
+        <p>{details}</p>
+      </section>
     </div>
   );
 };

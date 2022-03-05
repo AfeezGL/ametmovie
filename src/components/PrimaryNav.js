@@ -12,7 +12,12 @@ import CustomPrimaryNavLink from "./CustomPrimaryNavLink";
 
 const PrimaryNav = () => {
   return (
-    <nav className="nav" role={"navigation"} aria-roledescription="primary">
+    <nav
+      className="nav"
+      role={"navigation"}
+      aria-roledescription="primary"
+      aria-label="Primary"
+    >
       <div className="brand">
         <img src={logo} alt="Amet Logo" />
       </div>

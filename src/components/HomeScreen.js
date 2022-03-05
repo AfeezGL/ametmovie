@@ -6,7 +6,7 @@ import WatchScreen from "./WatchScreen";
 
 const HomeScreen = () => {
   return (
-    <div className="main">
+    <main className="main">
       <Routes>
         <Route path="/animes" element={<Animes />} />
         <Route path="/movies" element={<Movies />} />
@@ -15,7 +15,7 @@ const HomeScreen = () => {
         <Route path="/" element={<Navigate to={"/animes"} />} />
         <Route path="*" element={<Navigate to={"/animes"} />} />
       </Routes>
-    </div>
+    </main>
   );
 };
 
