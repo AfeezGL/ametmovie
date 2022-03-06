@@ -189,14 +189,18 @@ header {
 }
 .header-card {
   min-height: 200px;
-  max-height: 300px;
-  height: calc(17vw + 1rem);
+  height: 100%;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 30px;
   padding: 1rem 30px;
+}
+@media screen and (min-width: 900px) {
+  .header-card {
+    height: 300px;
+  }
 }
 .details {
   height: 100%;
@@ -205,8 +209,14 @@ header {
   justify-content: space-between;
 }
 .friends-watching {
-  display: flex;
+  display: none;
   gap: 1rem;
+}
+@media screen and (min-width: 488px) {
+  .friends-watching {
+    display: flex;
+    gap: 1rem;
+  }
 }
 .friends-watching img {
   width: 30px;
