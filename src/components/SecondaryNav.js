@@ -1,4 +1,5 @@
 import CustomSecondaryNavLink from "./CustomSecondaryNavLink.js";
+import logo from "../images/logo.svg";
 
 const CenterNav = () => {
   return (
@@ -7,6 +8,7 @@ const CenterNav = () => {
       aria-roledescription="secondary"
       aria-label="Secondary"
     >
+      <img src={logo} alt="Amet logo" />
       <ul>
         <li>
           <CustomSecondaryNavLink to={"/series"}>
