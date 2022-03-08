@@ -12,6 +12,10 @@ const HomeScreen = () => {
         <Route path="/movies" element={<Movies />} />
         <Route path="/series" element={<Series />} />
         <Route path="/watch/:movieId" element={<WatchScreen />} />
+        <Route
+          path="/watch/:movieId/:percentageSeen"
+          element={<WatchScreen />}
+        />
         <Route path="/" element={<Navigate to={"/animes"} />} />
         <Route path="*" element={<Navigate to={"/animes"} />} />
       </Routes>
