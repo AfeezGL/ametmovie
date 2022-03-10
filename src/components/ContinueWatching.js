@@ -13,7 +13,7 @@ const ContinueWatching = () => {
         {movies &&
           movies.map((movie) => (
             <Link
-              to={`/watch/${movie.id}`}
+              to={`/watch/${movie.data.videoId}`}
               key={movie.id}
               onClick={() => dispatch(setResumeFrom(movie.data.progress))}
             >
