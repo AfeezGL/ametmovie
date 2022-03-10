@@ -5,6 +5,7 @@ import { db } from "../../firebase";
 const initialState = {
   status: "idle",
   movies: "",
+  resumeFrom: "",
 };
 
 const fetchContinueWatching = createAsyncThunk(
@@ -24,7 +25,14 @@ const fetchContinueWatching = createAsyncThunk(
 const continueWatching = createSlice({
   name: "continueWatching",
   initialState,
-  reducers: {},
+  reducers: {
+    setResumeFrom: (state, action) => {
+      state.resumeFrom = action.payload;
+    },
+    clearResumeFrom: (state) => {
+      state.resumeFrom = "";
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchContinueWatching.pending, (state) => {
@@ -38,5 +46,7 @@ const continueWatching = createSlice({
 });
 
 export { fetchContinueWatching };
+
+export const { setResumeFrom, clearResumeFrom } = continueWatching.actions;
 
 export default continueWatching.reducer;

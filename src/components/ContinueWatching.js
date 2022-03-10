@@ -1,8 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { setResumeFrom } from "../redux/features/continueWatchingSlice";
 
 const ContinueWatching = () => {
+  const dispatch = useDispatch();
   const movies = useSelector((state) => state.continueWatching.movies);
   return (
     <div className="continue-watching">
@@ -11,8 +13,9 @@ const ContinueWatching = () => {
         {movies &&
           movies.map((movie) => (
             <Link
-              to={`/watch/${movie.id}/${movie.data.progress}`}
+              to={`/watch/${movie.id}`}
               key={movie.id}
+              onClick={() => dispatch(setResumeFrom(movie.data.progress))}
             >
               <figure>
                 <img src={movie.data.imgUrl} alt="movie screenshot" />

@@ -1,20 +1,26 @@
-import { useRef } from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { clearResumeFrom } from "../redux/features/continueWatchingSlice";
 const WatchScreen = () => {
-  const { percentageSeen } = useParams();
+  const dispatch = useDispatch();
+  const resumeFrom = useSelector((state) => state.continueWatching.resumeFrom);
   const title = useSelector((state) => state.currentlyPlaying.title);
   const details = useSelector((state) => state.currentlyPlaying.details);
   const videoRef = useRef();
 
+  useEffect(() => {
+    return () => {
+      dispatch(clearResumeFrom());
+    };
+  }, []);
+
+  // resume video from where the user stopped
   const resumeVideo = () => {
-    if (percentageSeen) {
-      const duration = videoRef.current.duration;
-      const time = Math.floor(
-        (Number(duration) * Number(percentageSeen)) / 100
-      );
-      videoRef.current.currentTime = time;
-    }
+    if (!resumeFrom) return;
+
+    const duration = videoRef.current.duration;
+    const time = Math.floor((Number(duration) * Number(resumeFrom)) / 100);
+    videoRef.current.currentTime = time;
   };
 
   return (

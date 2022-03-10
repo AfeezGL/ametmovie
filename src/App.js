@@ -14,6 +14,7 @@ function App() {
   );
 
   useEffect(() => {
+    // fetch all unfinished movies on first page render
     if (!continueWatching) dispatch(fetchContinueWatching());
   }, []);
 
