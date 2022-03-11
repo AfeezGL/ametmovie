@@ -4,7 +4,7 @@ import Movies from "./Movies";
 import Series from "./Series";
 import WatchScreen from "./WatchScreen";
 
-const HomeScreen = () => {
+const Layout = () => {
   return (
     <main className="main">
       <Routes>
@@ -19,4 +19,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default Layout;
