@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Animes from "./Animes";
-import Movies from "./Movies";
-import Series from "./Series";
+import Animes from "../pages/Animes";
+import Movies from "../pages/Movies";
+import Series from "../pages/Series";
 import WatchScreen from "./WatchScreen";
 
 const Layout = () => {

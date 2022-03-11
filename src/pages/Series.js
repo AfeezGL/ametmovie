@@ -1,4 +1,4 @@
-import SecondaryNav from "./SecondaryNav";
+import SecondaryNav from "../components/SecondaryNav";
 
 const Series = () => {
   return (
