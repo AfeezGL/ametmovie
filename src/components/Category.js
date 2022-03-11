@@ -11,7 +11,7 @@ const Category = ({ category }) => {
       </div>
 
       <div className="cards">
-        {category.animes.map((anime) => (
+        {category.movies.map((anime) => (
           <Link to={`/watch/${anime.data.videoId}`} key={anime.id}>
             <figure className="card">
               <img src={anime.data.imgUrl} alt="movie screenshot" />

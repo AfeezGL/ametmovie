@@ -3,25 +3,25 @@ import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const initialState = {
-  animes: "",
+  movies: "",
   status: "idle",
 };
 
-const getAnimes = createAsyncThunk("anime/getAnimes", async () => {
-  const animeCollectinRef = collection(db, "anime");
-  const categoriesRef = doc(animeCollectinRef, "categories");
+const fetchMovies = createAsyncThunk("movies/getMovies", async () => {
+  const collectinRef = collection(db, "movies");
+  const categoriesRef = doc(collectinRef, "categories");
   const getCategories = await getDoc(categoriesRef);
   const categories = getCategories.data();
 
   const allCategories = categories.names.map(async (category) => {
     const categoryCollectionRef = collection(
       db,
-      "anime",
+      "movies",
       "categories",
       category
     );
-    const getAnimes = await getDocs(categoryCollectionRef);
-    const movies = getAnimes.docs.map((doc) => ({
+    const getMovies = await getDocs(categoryCollectionRef);
+    const movies = getMovies.docs.map((doc) => ({
       data: doc.data(),
       id: doc.id,
     }));
@@ -36,22 +36,22 @@ const getAnimes = createAsyncThunk("anime/getAnimes", async () => {
   return objects;
 });
 
-const animeSlice = createSlice({
-  name: "anime",
+const moviesSlice = createSlice({
+  name: "movies",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAnimes.pending, (state) => {
+      .addCase(fetchMovies.pending, (state) => {
         state.status = "busy";
       })
-      .addCase(getAnimes.fulfilled, (state, action) => {
+      .addCase(fetchMovies.fulfilled, (state, action) => {
         state.status = "idle";
-        state.animes = action.payload;
+        state.movies = action.payload;
       });
   },
 });
 
-export { getAnimes };
+export { fetchMovies };
 
-export default animeSlice.reducer;
+export default moviesSlice.reducer;
