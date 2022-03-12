@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import animeReducer from "./features/AnimeSlice";
-import continueWatchingReducer from "./features/continueWatchingSlice";
+import continueWatchingReducer from "./features/ContinueWatchingSlice";
 import currentlyPlayingReducer from "./features/CurrentlyPlayingSlice";
 import movieReducer from "./features/MoviesSlice";
 

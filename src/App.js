@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import Friends from "./components/Friends";
 import Layout from "./components/Layout";
 import PrimaryNav from "./components/PrimaryNav";
-import { fetchContinueWatching } from "./redux/features/continueWatchingSlice";
+import { fetchContinueWatching } from "./redux/features/ContinueWatchingSlice";
 import { BrowserRouter as Router } from "react-router-dom";
 import { addDoc, collection, doc, getDocs, setDoc } from "firebase/firestore";
 import { db } from "./firebase";

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { setResumeFrom } from "../redux/features/continueWatchingSlice";
+import { setResumeFrom } from "../redux/features/ContinueWatchingSlice";
 
 const ContinueWatching = () => {
   const dispatch = useDispatch();

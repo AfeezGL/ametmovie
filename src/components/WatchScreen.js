@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { clearResumeFrom } from "../redux/features/continueWatchingSlice";
+import { clearResumeFrom } from "../redux/features/ContinueWatchingSlice";
 import {
   clearState,
   watchVideo,
