@@ -21,8 +21,8 @@ function App() {
 
     // const setVideoUrls = async () => {
     //   console.log("start");
-    //   const category = "";
-    //   const moviesRef = collection(db, "movies", "categories", category);
+    //   const category = "Sci-fi shows";
+    //   const moviesRef = collection(db, "series", "categories", category);
     //   const movies = await getDocs(moviesRef);
 
     //   console.log(movies);
@@ -36,7 +36,7 @@ function App() {
     //         "https://firebasestorage.googleapis.com/v0/b/ametmovie.appspot.com/o/demo%20video%2FThere's%20nobody%20else%20low%20qual.mp4?alt=media&token=0f738bb7-906d-4f02-9a59-ce80591011a7",
     //     });
 
-    //     const movieRef = doc(db, "movies", "categories", category, movie.id);
+    //     const movieRef = doc(db, "series", "categories", category, movie.id);
 
     //     await setDoc(
     //       movieRef,
