@@ -439,3 +439,62 @@ video {
     transform: rotate(360deg);
   }
 }
+
+/* POP UP MODAL */
+dialog {
+  width: 100%;
+  max-width: 80vw;
+  height: 100%;
+  max-height: 70vh;
+  margin: auto;
+  border: 1px solid #191a1f;
+  background-color: #191a1f;
+  position: relative;
+}
+dialog::backdrop {
+  background: #676772;
+  opacity: 0.2;
+}
+dialog > header {
+  width: calc(80vw - 1rem);
+  height: 2rem;
+  position: fixed;
+}
+dialog button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #191a1f;
+  background-color: #9696a3;
+  display: block;
+  margin: 0 0 0 auto;
+  transition: all 0.3s ease-in-out;
+}
+dialog button:hover {
+  color: #fff;
+  background-color: #000;
+}
+.popup-item {
+  display: flex;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  transition: background-color ease-in-out 0.3s;
+}
+.popup-item:hover {
+  background-color: #000;
+}
+.popup-item h4 {
+  font-weight: 500;
+}
+.popup-item p {
+  padding-left: 0.3rem;
+  font-size: 16px;
+  color: #fff;
+}
+dialog img {
+  width: 121px;
+  height: 151px;
+  border-radius: 20px;
+  object-fit: cover;
+}
