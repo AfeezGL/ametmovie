@@ -298,6 +298,18 @@ header h1 {
 .category-header p {
   color: #fff;
 }
+.category-header button {
+  color: #9696a3;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid #191a1f;
+  background-color: #191a1f;
+  transition: all 0.3s ease-in-out;
+}
+.category-header button:hover {
+  background-color: #000;
+  color: #fff;
+}
 .cards {
   display: flex;
   gap: 74px;
@@ -312,6 +324,7 @@ header h1 {
 .cards a {
   border-radius: 20px;
   transition: all ease-in-out 0.3s;
+  padding-bottom: 0.5rem;
 }
 .cards a:hover {
   background-color: #000;
