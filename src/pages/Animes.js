@@ -5,6 +5,7 @@ import SecondaryNav from "../components/SecondaryNav";
 import ContinueWatching from "../components/ContinueWatching";
 import Header from "../components/Header";
 import { getAnimes } from "../redux/features/AnimeSlice";
+import Footer from "../components/Footer";
 
 const Animes = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const Animes = () => {
         animes.map((category) => (
           <Category category={category} key={category.name} />
         ))}
+      <Footer />
     </>
   );
 };
