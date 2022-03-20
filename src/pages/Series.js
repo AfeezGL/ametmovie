@@ -10,6 +10,7 @@ import { fetchSeries } from "../redux/features/SeriesSlice";
 const Series = () => {
   const dispatch = useDispatch();
   const shows = useSelector((state) => state.series.shows);
+  const status = useSelector((state) => state.series.status);
   useEffect(() => {
     if (!shows) dispatch(fetchSeries());
   }, []);
@@ -18,6 +19,11 @@ const Series = () => {
       <SecondaryNav />
       <Header />
       <ContinueWatching />
+      {status !== "idle" && (
+        <div className="spinner-container">
+          <div className="spinner"></div>
+        </div>
+      )}
       {shows &&
         shows.map((category) => (
           <Category category={category} key={category.name} />

@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 const Animes = () => {
   const dispatch = useDispatch();
   const animes = useSelector((state) => state.anime.animes);
+  const status = useSelector((state) => state.anime.status);
   useEffect(() => {
     if (!animes) dispatch(getAnimes());
   }, []);
@@ -18,6 +19,11 @@ const Animes = () => {
       <SecondaryNav />
       <Header />
       <ContinueWatching />
+      {status !== "idle" && (
+        <div className="spinner-container">
+          <div className="spinner"></div>
+        </div>
+      )}
       {animes &&
         animes.map((category) => (
           <Category category={category} key={category.name} />

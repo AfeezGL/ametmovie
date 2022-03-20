@@ -10,6 +10,7 @@ import { fetchMovies } from "../redux/features/MoviesSlice";
 const Movies = () => {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.movie.movies);
+  const status = useSelector((state) => state.movie.status);
   useEffect(() => {
     if (!movies) dispatch(fetchMovies());
   }, []);
@@ -18,6 +19,11 @@ const Movies = () => {
       <SecondaryNav />
       <Header />
       <ContinueWatching />
+      {status !== "idle" && (
+        <div className="spinner-container">
+          <div className="spinner"></div>
+        </div>
+      )}
       {movies &&
         movies.map((category) => (
           <Category category={category} key={category.name} />

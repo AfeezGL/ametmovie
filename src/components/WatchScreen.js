@@ -37,6 +37,7 @@ const WatchScreen = () => {
         <div className="spinner"></div>
       </div>
     );
+
   if (video.error)
     return (
       <div className="spinner-container">
