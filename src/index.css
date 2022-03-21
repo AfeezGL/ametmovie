@@ -168,44 +168,24 @@ footer a {
 }
 
 /* header card */
+
 header {
   padding-bottom: 50px;
   position: relative;
 }
-.left-arrow,
-.right-arrow {
-  position: absolute;
-  color: #fff;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(
-    143.13deg,
-    rgba(255, 255, 255, 0.4) 4.71%,
-    rgba(255, 255, 255, 0.1) 94%
-  );
-  box-shadow: 0px 4px 40px -1px rgba(0, 0, 0, 0.05);
-  border: 1px solid;
-  border-image-source: linear-gradient(
-    135.33deg,
-    rgba(255, 255, 255, 0.4) 13.5%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
-  border-radius: 50%;
-  transition: ease 0.3s;
+.scroll-container {
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
 }
-.left-arrow {
-  top: calc(50% - 50px);
-}
-.right-arrow {
-  top: calc(50% - 50px);
-  right: 0;
-  backdrop-filter: blur(20px);
-}
-.left-arrow:hover,
-.right-arrow:hover {
-  backdrop-filter: blur(40px);
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }
 .header-card {
+  display: inline-block;
   min-height: 200px;
   height: 100%;
   width: 100%;
@@ -292,6 +272,39 @@ header h1 {
   width: 24px;
   height: 24px;
 }
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    143.13deg,
+    rgba(255, 255, 255, 0.4) 4.71%,
+    rgba(255, 255, 255, 0.1) 94%
+  );
+  box-shadow: 0px 4px 40px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    135.33deg,
+    rgba(255, 255, 255, 0.4) 13.5%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border-radius: 50%;
+  transition: ease 0.3s;
+}
+.left-arrow {
+  top: calc(50% - 50px);
+}
+.right-arrow {
+  top: calc(50% - 50px);
+  right: 0;
+  backdrop-filter: blur(20px);
+}
+.left-arrow:hover,
+.right-arrow:hover {
+  backdrop-filter: blur(40px);
+}
 
 /* category cards */
 .category {
@@ -324,6 +337,7 @@ header h1 {
   width: 100%;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
 .cards::-webkit-scrollbar {
   display: none;
