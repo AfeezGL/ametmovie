@@ -172,6 +172,7 @@ footer a {
 header {
   padding-bottom: 50px;
   position: relative;
+  min-height: 200px;
 }
 .scroll-container {
   overflow: auto;
