@@ -6,18 +6,23 @@ import Layout from "./components/Layout";
 import PrimaryNav from "./components/PrimaryNav";
 import { fetchContinueWatching } from "./redux/features/ContinueWatchingSlice";
 import { BrowserRouter as Router } from "react-router-dom";
-import { addDoc, collection, doc, getDocs, setDoc } from "firebase/firestore";
-import { db } from "./firebase";
+// import { addDoc, collection, doc, getDocs, setDoc } from "firebase/firestore";
+// import { db } from "./firebase";
+import { fetchTrending } from "./redux/features/TrendingSlice";
 
 function App() {
   const dispatch = useDispatch();
   const continueWatching = useSelector(
     (state) => state.continueWatching.movies
   );
+  const trending = useSelector((state) => state.trending.movies);
 
   useEffect(() => {
     // fetch all unfinished movies on first page render
     if (!continueWatching) dispatch(fetchContinueWatching());
+
+    // fetch trending movies on first mage render
+    if (!trending) dispatch(fetchTrending());
 
     // const setVideoUrls = async () => {
     //   console.log("start");
