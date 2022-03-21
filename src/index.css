@@ -293,7 +293,11 @@ header h1 {
     rgba(255, 255, 255, 0.1) 100%
   );
   border-radius: 50%;
-  transition: ease 0.3s;
+  transition: all ease 0.3s;
+}
+.left-arrow:active,
+.right-arrow:active {
+  background-color: #000;
 }
 .left-arrow {
   top: calc(50% - 50px);
