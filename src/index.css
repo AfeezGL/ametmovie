@@ -495,7 +495,7 @@ dialog::backdrop {
   background: #676772;
   opacity: 0.2;
 }
-dialog > header {
+dialog > .header {
   width: calc(80vw - 1rem);
   height: 2rem;
   position: fixed;

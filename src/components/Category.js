@@ -34,7 +34,7 @@ const Category = ({ category }) => {
       </div>
 
       <dialog ref={dialogRef}>
-        <header>
+        <div className="header">
           <button
             onClick={() => {
               dialogRef.current.close();
@@ -42,7 +42,7 @@ const Category = ({ category }) => {
           >
             <i className="fa-solid fa-xmark"></i>
           </button>
-        </header>
+        </div>
 
         {category.movies.map((movie) => (
           <Link to={`/watch/${movie.data.videoId}`} key={movie.id}>
